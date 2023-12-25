@@ -5,18 +5,19 @@ import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 import { getDatabase } from "firebase/database";
 import firebase from 'firebase/compat/app'
+import {APIKEY, AUTHDOMAIN, DATABASEURL, PROJECTID , STROAGEBUCKET, MESSAGINGSENDERID, APPID, MEASUREMENTID} from '@env'
 
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAuxcu6RjDYxfEb8GCM0_gajGz9Tvz7v-0",
-  authDomain: "storeapp-d7e0e.firebaseapp.com",
-  databaseURL: "https://storeapp-d7e0e-default-rtdb.firebaseio.com",
-  projectId: "storeapp-d7e0e",
-  storageBucket: "storeapp-d7e0e.appspot.com",
-  messagingSenderId: "1073559918124",
-  appId: "1:1073559918124:web:c8159c7babb4374eeb2389",
-  measurementId: "G-VGFQKQ4RE9"
+  apiKey: APIKEY,
+  authDomain: AUTHDOMAIN,
+  databaseURL: DATABASEURL,
+  projectId: PROJECTID,
+  storageBucket: STROAGEBUCKET,
+  messagingSenderId: MESSAGINGSENDERID,
+  appId: APPID,
+  measurementId: MEASUREMENTID
 };
 
 
