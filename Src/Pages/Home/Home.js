@@ -14,6 +14,24 @@ const Home = () => {
   const [messageList, setMessageList] = useState([])
   const userMail = auth.currentUser.email
 
+
+
+  useEffect(() => {
+    const refdata = ref(db, 'Users/');
+    onValue(refdata, (snapshot) => {
+      const data = snapshot.val();
+      console.log(data)
+      const parsedData = ParseData(data)
+      //console.log(parsedData);
+      setMessageList(parsedData)
+    })
+  }, [])
+  
+
+  const handleText = (text) => {
+    setText(text);
+  }
+
   function sendText() {
     const User = {
       text: text,
@@ -25,27 +43,17 @@ const Home = () => {
     setText('');
   }
 
-  useEffect(() => {
-    const refdata = ref(db, 'Users/');
-    onValue(refdata, (snapshot) => {
-      const data = snapshot.val();
-      const parsedData = ParseData(data)
-      setMessageList(parsedData)
-    })
-  }, [])
-
-  const handleText = (text) => {
-    setText(text);
-  }
-
   function handleOnLike(item) {
-    console.log(item.dislike)
-    
+
+    console.log(item.id)
+    const refdata = ref(db, `Users/${item.id}/User/dislike`);
+    console.log(refdata)
+    set(refdata,item.User.dislike+1)
   }
 
   const renderData = ({ item }) =>
     <Messages 
-    messages={item.User} handleLike={()=>handleOnLike(item.User)}
+    messages={item.User} handleLike={()=>handleOnLike(item)}
     />
 
   return (

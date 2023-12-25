@@ -24,6 +24,11 @@ const Messages = ({ messages,handleLike }) => {
         <Text style={styles.text}>{messages.text}</Text>
       </View>
       <View style={styles.innerContainer}>
+        {!!messages.dislike && (
+          <View style={styles.containerLike}>
+            <Text style={styles.dislike}>{messages.dislike}</Text>
+          </View>
+        )}
         <AntDesign
           name='like2'
           size={25}

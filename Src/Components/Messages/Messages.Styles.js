@@ -46,5 +46,17 @@ export default StyleSheet.create({
         fontStyle: 'italic',
         color:Color.White
     },
+    containerLike:{
+        marginRight:8,
+        marginLeft:10,
+        justifyContent:'center',
+        alignItems:'center',
+        
+    },
+    dislike:{
+        color:Color.White,
+        fontSize:17,
+        fontWeight:'bold',
+    }
   
 })

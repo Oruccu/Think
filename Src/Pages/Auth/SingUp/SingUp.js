@@ -73,7 +73,7 @@ const SingUp = ({ navigation }) => {
                 onChange={handleChange('password')}
                 value={values.password}
                 theme={'Secondary'}
-                isSecure
+                isSecure={true}
                 icon={'key'} />
               {
                 touched.password && errors.password &&
